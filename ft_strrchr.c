@@ -6,7 +6,7 @@
 /*   By: kato <kato@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 13:27:41 by kato              #+#    #+#             */
-/*   Updated: 2025/04/15 13:35:46 by kato             ###   ########.fr       */
+/*   Updated: 2025/04/15 14:25:48 by kato             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char	*ft_strrchr(const char *s, int c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)
-			last = (char *)(s+i);
+			last = (char *)(s + i);
 		i++;
 	}
 	if (c == '\0')
-		return ((char *)(s+i));
+		return ((char *)(s + i));
 	return (last);
 }
