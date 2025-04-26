@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kato <kato@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kmizuki <kmizuki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:34:05 by kato              #+#    #+#             */
-/*   Updated: 2025/04/15 14:39:32 by kato             ###   ########.fr       */
+/*   Updated: 2025/04/26 15:38:04 by kmizuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			i;
 
 	total = count * size;
+	//オーバーフロー対策を追加
+	if (size != 0 && total / size != count)
+		return (NULL);
 	ptr = malloc(total);
 	if (ptr == NULL)
 		return (NULL);
